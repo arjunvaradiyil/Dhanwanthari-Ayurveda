@@ -1,13 +1,14 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-cream: #f9f8f6;
-  --color-terracotta: #cc8469;
+  --color-cream: #f9f7f2;
+  --color-forest: #1b3022;
+  --color-terracotta: #c68667;
   --color-charcoal: #1a1a1a;
   --color-body: #5c5c5c;
   --color-sage-badge: #d4e4d4;
   --color-sage-text: #2f4a32;
-  --color-stat-border: #e5e5e5;
+  --color-mist: #eef1ec;
 
   --font-sans: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-playfair), ui-serif, Georgia, "Times New Roman", serif;
