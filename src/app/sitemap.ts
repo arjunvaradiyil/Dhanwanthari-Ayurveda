@@ -1,15 +1,15 @@
 import type { MetadataRoute } from "next";
 import { getSiteUrl } from "@/lib/site";
+import { SITEMAP_ENTRIES } from "@/lib/sitemap-paths";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = getSiteUrl();
-  const paths = ["", "/heritage", "/treatments", "/contact", "/privacy", "/terms"] as const;
+  const base = getSiteUrl().replace(/\/$/, "");
   const now = new Date();
 
-  return paths.map((path) => ({
-    url: `${base}${path}`,
+  return SITEMAP_ENTRIES.map(({ path, changeFrequency, priority }) => ({
+    url: path === "" ? base : `${base}${path}`,
     lastModified: now,
-    changeFrequency: path === "" ? "weekly" : "monthly",
-    priority: path === "" ? 1 : 0.8,
+    changeFrequency,
+    priority,
   }));
 }
