@@ -1,9 +1,21 @@
-/** Canonical site origin for SEO (set in production). */
+/** Canonical site origin for SEO (sitemap, robots, OG, JSON-LD). */
 export function getSiteUrl(): string {
   const explicit = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "");
   if (explicit) return explicit;
-  if (process.env.VERCEL_URL)
-    return `https://${process.env.VERCEL_URL.replace(/\/$/, "")}`;
+
+  // Production on Vercel: prefer the project’s production hostname (often your custom
+  // domain). Using VERCEL_URL alone yields *.vercel.app URLs in sitemap.xml, which
+  // Google Search Console rejects for a property on www.yourdomain.com.
+  const prodHost = process.env.VERCEL_PROJECT_PRODUCTION_URL?.replace(
+    /^https?:\/\//,
+    "",
+  ).replace(/\/$/, "");
+  if (process.env.VERCEL_ENV === "production" && prodHost)
+    return `https://${prodHost}`;
+
+  const vercelUrl = process.env.VERCEL_URL?.replace(/\/$/, "");
+  if (vercelUrl) return `https://${vercelUrl}`;
+
   return "http://localhost:3000";
 }
 
