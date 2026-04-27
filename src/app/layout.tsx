@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
 import { Montserrat, Playfair_Display } from "next/font/google";
 import { JsonLd } from "@/components/json-ld";
-import { getSiteUrl, SITE_DESCRIPTION, SITE_NAME } from "@/lib/site";
+import {
+  BRAND_SEARCH_NAME,
+  getSiteUrl,
+  SITE_DESCRIPTION,
+  SITE_NAME,
+} from "@/lib/site";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -20,36 +25,42 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   metadataBase: new URL(getSiteUrl()),
   title: {
-    default: `${SITE_NAME} | Dr. Anju Mol, BAMS`,
-    template: `%s | ${SITE_NAME}`,
+    default: `${BRAND_SEARCH_NAME} | ${SITE_NAME} · Thiruvilwamala`,
+    template: `%s | ${BRAND_SEARCH_NAME}`,
   },
   description: SITE_DESCRIPTION,
-  applicationName: SITE_NAME,
+  applicationName: BRAND_SEARCH_NAME,
   referrer: "origin-when-cross-origin",
   keywords: [
+    BRAND_SEARCH_NAME,
+    "Dhanwanthari Parambarya",
+    SITE_NAME,
     "Ayurveda",
-    "Varkala",
+    "Thiruvilwamala",
     "Kerala",
+    "680594",
     "Panchakarma",
     "Shirodhara",
     "Dr. Anju Mol",
     "BAMS",
     "vaidyashala",
-    "Dhanwanthari Ayurveda",
+    "Parambarya",
+    "Eravathody Road",
   ],
   authors: [{ name: "Dr. Anju Mol", url: getSiteUrl() }],
-  creator: SITE_NAME,
+  creator: BRAND_SEARCH_NAME,
+  publisher: SITE_NAME,
   openGraph: {
     type: "website",
-    siteName: SITE_NAME,
+    siteName: BRAND_SEARCH_NAME,
     locale: "en_IN",
     url: getSiteUrl(),
-    title: SITE_NAME,
+    title: `${BRAND_SEARCH_NAME} | ${SITE_NAME}`,
     description: SITE_DESCRIPTION,
   },
   twitter: {
     card: "summary_large_image",
-    title: SITE_NAME,
+    title: `${BRAND_SEARCH_NAME} | ${SITE_NAME}`,
     description: SITE_DESCRIPTION,
   },
   robots: { index: true, follow: true },

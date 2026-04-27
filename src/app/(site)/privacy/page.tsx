@@ -3,7 +3,7 @@ import { pageMetadata } from "@/lib/metadata";
 export const metadata = pageMetadata({
   title: "Privacy policy",
   description:
-    "How Dhanwanthari Ayurveda handles personal information when you use our website or book appointments.",
+    "How Dhanwanthari Parambarya Ayurveda Vaidyashala handles personal information when you use our website or book appointments.",
   path: "/privacy",
 });
 

@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
+import { SITE_NAME } from "@/lib/site";
 
 const colA = [
   { href: "/privacy", label: "Privacy policy" },
@@ -32,10 +33,10 @@ export function SiteFooter() {
             href="/"
             className="font-serif text-xl font-bold text-forest hover:opacity-90"
           >
-            Dhanwanthari Ayurveda
+            {SITE_NAME}
           </Link>
           <p className="mt-2 text-sm text-body">
-            © {new Date().getFullYear()} Dhanwanthari Ayurveda. Dr. Anju Mol,
+            © {new Date().getFullYear()} {SITE_NAME}. Dr. Anju Mol,
             BAMS · Reg. No. 26249
           </p>
           <div className="mt-6 flex gap-3">

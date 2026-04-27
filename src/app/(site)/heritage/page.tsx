@@ -7,7 +7,7 @@ import { pageMetadata } from "@/lib/metadata";
 export const metadata = pageMetadata({
   title: "Heritage",
   description:
-    "Our lineage since 1924—classical Shastra, Dr. Anju Mol (BAMS), and the philosophy behind Dhanwanthari Ayurveda in Varkala, Kerala.",
+    "Our lineage since 1924—classical Shastra, Dr. Anju Mol (BAMS), and the philosophy behind Dhanwanthari Parambarya Ayurveda Vaidyashala in Thiruvilwamala, Kerala.",
   path: "/heritage",
 });
 

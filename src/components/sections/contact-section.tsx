@@ -1,4 +1,9 @@
 import { ContactForm } from "@/components/sections/contact-form";
+import {
+  CLINIC_MAP_EMBED_SRC,
+  CLINIC_MAPS_EXTERNAL_URL,
+  SITE_NAME,
+} from "@/lib/site";
 
 export function ContactSection() {
   return (
@@ -47,11 +52,15 @@ export function ContactSection() {
                 <p className="text-xs font-semibold uppercase tracking-wider text-charcoal/60">
                   Location
                 </p>
-                <p className="mt-2 leading-relaxed text-body">
-                  Dhanwanthari Ayurveda
+                <address className="mt-2 not-italic leading-relaxed text-body">
+                  {SITE_NAME}
                   <br />
-                  Varkala, Kerala, India
-                </p>
+                  rPCP9+4G3, Eravathody Rd
+                  <br />
+                  Thiruvilwamala, Kerala 680594
+                  <br />
+                  India
+                </address>
               </li>
               <li>
                 <p className="text-xs font-semibold uppercase tracking-wider text-charcoal/60">
@@ -68,12 +77,27 @@ export function ContactSection() {
               </li>
             </ul>
 
-            <div className="mt-10 overflow-hidden rounded-xl border border-forest/10 bg-mist">
-              <div className="aspect-[4/3] bg-linear-to-br from-charcoal/10 to-forest/10">
-                <div className="flex h-full items-center justify-center p-6 text-center text-xs text-body">
-                  Map: Varkala area — replace with Google Maps embed when ready.
-                </div>
-              </div>
+            <div className="mt-10 overflow-hidden rounded-xl border border-forest/10 bg-mist shadow-sm">
+              <iframe
+                src={CLINIC_MAP_EMBED_SRC}
+                title={`${SITE_NAME}, Thiruvilwamala — Google Maps`}
+                className="h-[280px] w-full sm:h-[320px] lg:h-[360px]"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+              <p className="border-t border-forest/10 bg-cream px-4 py-3 text-center text-xs text-body">
+                <a
+                  href={CLINIC_MAPS_EXTERNAL_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-forest underline decoration-terracotta/40 underline-offset-2 hover:decoration-terracotta"
+                >
+                  Open in Google Maps
+                </a>
+                <span className="sr-only"> (opens in a new tab)</span>
+              </p>
             </div>
           </div>
         </div>

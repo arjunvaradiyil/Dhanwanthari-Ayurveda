@@ -13,11 +13,28 @@ export function absoluteUrl(path: string): string {
   return `${base}${p}`;
 }
 
-export const SITE_NAME = "Dhanwanthari Ayurveda";
+/** Primary search / brand phrase (what people type in Google). */
+export const BRAND_SEARCH_NAME = "Dhanwanthari Ayurveda";
+
+/** Legal / signage name. */
+export const SITE_NAME = "Dhanwanthari Parambarya Ayurveda Vaidyashala";
+
 export const SITE_DESCRIPTION =
-  "Traditional Ayurvedic vaidyashala in Varkala, Kerala—led by Dr. Anju Mol (BAMS, Reg. No. 26249). Panchakarma, Shirodhara, consultations, and classical protocols.";
+  `${BRAND_SEARCH_NAME} — official vaidyashala in Thiruvilwamala, Kerala (${SITE_NAME}). Led by Dr. Anju Mol (BAMS, Reg. No. 26249). Panchakarma, Shirodhara, consultations, and classical Ayurvedic care.`;
+
+/** Google Maps “open in maps” / search URL for the clinic address. */
+export const CLINIC_MAPS_EXTERNAL_URL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+  "rPCP9+4G3, Eravathody Rd, Thiruvilwamala, Kerala 680594, India",
+)}`;
+
+/** Embed-friendly maps URL (search by address; replace with a place embed if you have one). */
+export const CLINIC_MAP_EMBED_SRC = `https://www.google.com/maps?q=${encodeURIComponent(
+  "Dhanwanthari Parambarya Ayurveda Vaidyashala, Eravathody Rd, Thiruvilwamala, Kerala 680594, India",
+)}&output=embed`;
 
 /** YouTube (or other) URL for the “Watch treatments video” button. Override in env for your real upload. */
 export const TREATMENTS_VIDEO_URL =
   process.env.NEXT_PUBLIC_TREATMENTS_VIDEO_URL?.trim() ||
-  "https://www.youtube.com/results?search_query=Dhanwanthari+Ayurveda+treatments+Varkala";
+  `https://www.youtube.com/results?search_query=${encodeURIComponent(
+    `${BRAND_SEARCH_NAME} Thiruvilwamala Panchakarma`,
+  )}`;

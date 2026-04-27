@@ -3,7 +3,7 @@ import { pageMetadata } from "@/lib/metadata";
 export const metadata = pageMetadata({
   title: "Terms of service",
   description:
-    "Terms for using the Dhanwanthari Ayurveda website and booking services at our Varkala clinic.",
+    "Terms for using the Dhanwanthari Parambarya Ayurveda Vaidyashala website and booking services at our Thiruvilwamala clinic.",
   path: "/terms",
 });
 

@@ -51,7 +51,8 @@ export function HeritageSection() {
                 with humility and precision.
               </p>
               <p>
-                Dhanwanthari Ayurveda continues that lineage today under{" "}
+                Dhanwanthari Parambarya Ayurveda Vaidyashala continues that
+                lineage today under{" "}
                 <span className="font-medium text-forest">
                   Dr. Anju Mol (BAMS, Reg. No. 26249)
                 </span>
